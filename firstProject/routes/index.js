@@ -3,22 +3,18 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express - GET' });
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+router.put('/', function(req, res, next) {
+  res.render('index', { title: 'Express - PUT' });
+});
 
-app.post('/', (req, res) => {
-  res.send('Got a POST request')
-})
+router.post('/', function(req, res, next) {
+  res.render('index', { title: 'Express - POST' });
+});
 
-app.put('/user', (req, res) => {
-  res.send('Got a PUT request at /user')
-})
-
-app.delete('/user', (req, res) => {
-  res.send('Got a DELETE request at /user')
-})
+router.delete('/', function(req, res, next) {
+  res.render('index', { title: 'Express - DELETE' });
+});
 module.exports = router;
